@@ -118,7 +118,7 @@ def analysis(db_path, model_name, distance_metric, enable_face_analysis = True):
 	
 	#-----------------------
 
-	time_threshold = 5; frame_threshold = 5
+	time_threshold = 3; frame_threshold = 2
 	pivot_img_size = 112 #face recognition result image
 
 	#-----------------------
@@ -375,7 +375,7 @@ def analysis(db_path, model_name, distance_metric, enable_face_analysis = True):
 								employee_name = candidate['employee']
 								best_distance = candidate['distance']
 								
-								p#rint(candidate[['employee', 'distance']].values)
+								#print(candidate[['employee', 'distance']].values)
 								
 								#if True:
 								if best_distance <= threshold:

@@ -25,20 +25,20 @@ def loadModel():
 	
 	home = str(Path.home())
 	
-	if os.path.isfile(home+'/.deepface/weights/VGGFace2_DeepFace_weights_val-0.9034.h5') != True:
+	if os.path.isfile('C:/Users/SAPUSER/Documents/GitHub/fv/weights/VGGFace2_DeepFace_weights_val-0.9034.h5') != True:
 		print("VGGFace2_DeepFace_weights_val-0.9034.h5 will be downloaded...")
 		
 		url = 'https://github.com/swghosh/DeepFace/releases/download/weights-vggface2-2d-aligned/VGGFace2_DeepFace_weights_val-0.9034.h5.zip'
 		
-		output = home+'/.deepface/weights/VGGFace2_DeepFace_weights_val-0.9034.h5.zip'
+		output = 'C:/Users/SAPUSER/Documents/GitHub/fv/weights/VGGFace2_DeepFace_weights_val-0.9034.h5'
 		
 		gdown.download(url, output, quiet=False)
 		
 		#unzip VGGFace2_DeepFace_weights_val-0.9034.h5.zip
 		with zipfile.ZipFile(output, 'r') as zip_ref:
-			zip_ref.extractall(home+'/.deepface/weights/')
+			zip_ref.extractall('C:/Users/SAPUSER/Documents/GitHub/fv/weights/')
 		
-	base_model.load_weights(home+'/.deepface/weights/VGGFace2_DeepFace_weights_val-0.9034.h5')	
+	base_model.load_weights('C:/Users/SAPUSER/Documents/GitHub/fv/weights/VGGFace2_DeepFace_weights_val-0.9034.h5')	
 	
 	#drop F8 and D0. F7 is the representation layer.
 	deepface_model = Model(inputs=base_model.layers[0].input, outputs=base_model.layers[-3].output)

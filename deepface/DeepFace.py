@@ -833,7 +833,7 @@ def find(img_path, db_path
 		
 	return None
 	
-def stream(db_path = '', model_name ='VGG-Face', distance_metric = 'cosine', enable_face_analysis = True):
+def stream(db_path = '', model_name ='Facenet', distance_metric = 'cosine', enable_face_analysis = False):
 	realtime.analysis(db_path, model_name, distance_metric, enable_face_analysis)
 
 def allocateMemory():
